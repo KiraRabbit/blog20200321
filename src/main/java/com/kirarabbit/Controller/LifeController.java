@@ -10,12 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping
-public class firstPageController {
+public class LifeController {
 
     @ResponseBody
     public ModelAndView index(){
         ModelAndView mode = new ModelAndView();
-        mode.setViewName("firstPage");
+        mode.setViewName("life.html");
         return mode;
     }
 }
