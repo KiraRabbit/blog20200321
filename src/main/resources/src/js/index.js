@@ -57,11 +57,11 @@ function getColor(){
 startGame = function startGame() {
     /*var audio= new Audio("../music/iKnow.mp3");
     audio.play();*/
-    window.location.href = "/firstPage/list";
+    window.location.href = "../../static/html/firstPage/list";
 };
 
 $("#abc").on("click", function () {
-    window.location.href = "/firstPage/list";
+    window.location.href = "../../static/html/firstPage/list";
 });
 
 

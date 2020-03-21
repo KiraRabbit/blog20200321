@@ -5,11 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class indexController {
-    @RequestMapping
-    public String index()  {
-        return "index";
+    @ResponseBody
+    public ModelAndView index(){
+        ModelAndView mode = new ModelAndView();
+        mode.setViewName("index");
+        return mode;
     }
 }
