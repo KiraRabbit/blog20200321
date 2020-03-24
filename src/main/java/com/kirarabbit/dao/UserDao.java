@@ -22,4 +22,8 @@ public class UserDao {
     public List<User> getAll() {
         return userMapper.getAll();
     }
+
+    public List<User> getOne(String userName, String password) {
+        return userMapper.getOne(userName,password);
+    }
 }

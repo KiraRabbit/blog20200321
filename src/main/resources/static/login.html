@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml"
-xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!--<script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>-->
+    <meta name="keywords"
+          content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
     <!--webfonts-->
-    <link href='http://fonts.useso.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
-    <script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
 <body>
-<script>$(document).ready(function(c) {
-    $('.close').on('click', function(c){
-        $('.login-form').fadeOut('slow', function(c){
-            $('.login-form').remove();
-        });
-    });
-});
-</script>
+
 <!--SIGN UP-->
 <h1> Login In</h1>
 <div class="login-form">
-    <div class="close"> </div>
+    <div class="close"></div>
     <div class="head-info">
         <label class="lbl-1"> </label>
         <label class="lbl-2"> </label>
         <label class="lbl-3"> </label>
     </div>
-    <div class="clear"> </div>
+    <div class="clear"></div>
     <div class="avtar">
-        <img src="images/avtar.png"  width="100" height="100"/>
+        <img src="images/avtar.png" width="100" height="100"/>
     </div>
     <form>
-        <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+        <!--<input type="text" class="text" id="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >-->
+        <input type="text" class="text" id="Username">
         <div class="key">
-            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+            <!--  <input type="password" id="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">-->
+            <input type="password" id="Password">
         </div>
     </form>
-    <div class="signin">
-        <input type="submit" value="Login" >
+    <div>
+        <div  class="modal-footer" style="border-top-width: 0px;">
+            <button id = "createNew" type="button" class="btn btn-primary" data-dismiss="modal">注册新账号</button>
+            <button id="login" type="submit" class="btn btn-success">登录</button>
+        </div>
+
     </div>
 </div>
+
+
+
 <div class="copy-rights">
     <div style="color: #009688;font-size: 15px;">
-        &copy; 2020-2021 涓夋棩鏈堢殑楦熷眳 - <i class="am-icon-coffee" style="margin: 0 5px"></i>娴橧CP澶�20006564鍙�
-    </div></div>
+        &copy; 2020-2021 三日月的鸟居 - <i class="am-icon-coffee" style="margin: 0 5px"></i>浙ICP备20006564号
+    </div>
+</div>
 
 </body>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
 </html>

@@ -8,52 +8,103 @@
             <h1 class="am-topbar-brand">
                 <a href="/" class="blogTitleName"><img src="https://kira-blog.oss-cn-hangzhou.aliyuncs.com/logo1.jpg/kira.png" class="imgStyle">三日月</a>
             </h1>
-
             <!--手机适配导航显示按钮-->
             <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" style="background-color: #CCCCCC;border-color: white;border-radius: 6px" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+            <div>
+                <!--头部-->
+                <div class="header">
+                    <div class="am-topbar" style="margin-bottom: 0">
+                        <h1 class="am-topbar-brand">
+                            <a href="/" class="blogTitleName"><img src="img/kira/logo.jpeg" class="imgStyle">三日月</a>
+                        </h1>
+                        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+                                style="background-color: #CCCCCC;border-color: white;border-radius: 6px"
+                                data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+                                class="am-icon-bars"></span></button>
 
-            <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-                <ul class="am-nav am-nav-pills am-topbar-nav">
-                    <li><a class="top_bar" href="/firstPage.html" style="cursor: pointer;"><span class="am-icon-home"></span>&nbsp;首页</a></li>
-                    <li><a class="top_bar" href="/life.html" style="cursor: pointer;"><span class="am-icon-th"></span>&nbsp;生活</a></li>
-                    <li><a class="top_bar" href="/technology.html" style="cursor: pointer;"><span class="am-icon-archive"></span>&nbsp;技术</a></li>
-                    <li><a class="top_bar" href="/tags.html" style="cursor: pointer;"><span class="am-icon-tags"></span>&nbsp;标签</a></li>
-                    <li><a class="top_bar" href="/update.html" style="cursor: pointer;"><span class="am-icon-calendar-plus-o"></span>&nbsp;版本更新</a></li>
-                    <li><a class="top_bar" href="/aboutMe.html" style="cursor: pointer;"><span class="am-icon-user"></span>&nbsp;关于三日月</a> </li>
-                </ul>
+                        <div id="personal-card" class="am-dropdown am-show-md-down" data-am-dropdown style="float: right">
+                            <button id="personal-card-btn" class="am-btn am-btn-success am-dropdown-toggle" style="padding: 0">
+                                <img src="img/kira/logo.jpeg"><span class="am-icon-caret-down"></span></button>
+                            <div class="am-dropdown-content">
+                                <div class="personal-card-show" style="text-align: center">
+                                    <div class="personal-card-show-img">
+                                        <img src="https://kira-blog.oss-cn-hangzhou.aliyuncs.com/logo1.jpg">
+                                    </div>
+                                    <div class="personal-card-show-name">
+                                        <h4 style="font-weight: 500">三日月</h4>
+                                    </div>
+                                    <div class="personal-card-show-words">
+                                        <small style="font-size: 13px;color: #808080ad;">我穿过鸟居,能否遇见神明?</small>
+                                    </div>
+                                    <div class="personal-card-show-connection" style="margin-top: 10px">
+                                        <span style="color: #009688">微信：my_soul_your_beats_</span><br>
+                                        <span style="color: #009688">QQ：745583189</span><br>
+                                    </div>
+                                    <div class="personal-card-show-attention_btn">
+                                        <button class="myCardBtn am-btn am-btn-secondary am-round attention_btn"
+                                                data-am-offcanvas="{target: '#doc-oc-demo1'}" style="margin-top: 10px">扫描二维码关注我
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="am-topbar-right" th:if="${#httpServletRequest.remoteUser}">
-                    <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                        <button class="personalSpace am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle><span ></span> <span class="am-icon-caret-down"></span></button>
-                        <ul class="am-dropdown-content">
-                            <li><a href="/user.html" >个人主页</a></li>
-                            <li><a href="/superadmin.html" >网站后台管理</a></li>
-                            <li><a href="/user.html" class="news">消息<span class="newsNum am-badge am-badge-danger"></span></a></li>
-                            <li><a class="feedbackClick">反馈</a></li>
-                            <hr style="margin: 10px 0 5px 0;">
-                            <li><a th:href="@{/logout}">退出登录</a></li>
-                        </ul>
+                        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+                            <ul class="am-nav am-nav-pills am-topbar-nav">
+                                <li><a class="top_bar" href="/firstPage.html" style="cursor: pointer;"><span class="am-icon-home"></span>&nbsp;首页</a>
+                                </li>
+                                <li><a class="top_bar" href="/life.html" style="cursor: pointer;"><span class="am-icon-th"></span>&nbsp;生活</a>
+                                </li>
+                                <li><a class="top_bar" href="/technology.html" style="cursor: pointer;"><span
+                                        class="am-icon-archive"></span>&nbsp;技术</a></li>
+                                <li><a class="top_bar" href="/tags.html" style="cursor: pointer;"><span class="am-icon-tags"></span>&nbsp;标签</a>
+                                </li>
+                                <li><a class="top_bar" href="/update.html" style="cursor: pointer;"><span
+                                        class="am-icon-calendar-plus-o"></span>&nbsp;版本更新</a></li>
+                                <li><a class="top_bar" href="/aboutMe.html" style="cursor: pointer;"><span
+                                        class="am-icon-user"></span>&nbsp;关于三日月</a></li>
+                            </ul>
+
+
+                            <div class="am-topbar-right" th:if="${#httpServletRequest.remoteUser}">
+                                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                                    <button class="personalSpace am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle"
+                                            data-am-dropdown-toggle><span></span> <span class="am-icon-caret-down"></span></button>
+                                    <ul class="am-dropdown-content">
+                                        <li><a href="/user.html">个人主页</a></li>
+                                        <li><a href="/superadmin.html">网站后台管理</a></li>
+                                        <li><a href="/user.html" class="news">消息<span
+                                                class="newsNum am-badge am-badge-danger"></span></a></li>
+                                        <li><a class="feedbackClick">反馈</a></li>
+                                        <hr style="margin: 10px 0 5px 0;">
+                                        <li><a th:href="@{/logout}">退出登录</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="am-topbar-right">
+                                <a href="/static/register.html" class="am-btn am-btn-primary am-topbar-btn am-btn-sm"
+                                   style="color: white">注册</a>
+                            </div>
+                            <div class="am-topbar-right">
+                                <a href="/login.html" class="loginBtn am-btn am-btn-primary am-topbar-btn am-btn-sm"
+                                   style="color: white">登录</a>
+                            </div>
+                            <div class="am-topbar-right writing am-hide-sm-down">
+                                <a href="/static/editor.html">
+                                    <img src="img/sign/write.png">
+                                    <span class="write-word">写博客</span>
+                                </a>
+                            </div>
+                            <div class="am-topbar-right reward am-hide-sm-down">
+                                <a href="/reward.html" style="text-decoration: none">
+                                    <img class="am-circle" src="img/sign/forbidden.png" width="20" height="20">
+                                    <span class="reward-word">禁止投食</span>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="am-topbar-right">
-                    <a href="/static/register.html" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">注册</a>
-                </div>
-                <div class="am-topbar-right" >
-                    <a href="/login.html" class="loginBtn am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">登录</a>
-                </div>
-                <div class="am-topbar-right writing am-hide-sm-down">
-                    <a  href="/static/editor.html" >
-                        <img  src="img/sign/write.png" >
-                        <span class="write-word">写博客</span>
-                    </a>
-                </div>
-                <div class="am-topbar-right reward am-hide-sm-down">
-                    <a  href="/reward.html" style="text-decoration: none">
-                        <img class="am-circle" src="img/sign/forbidden.png" width="20" height="20">
-                        <span class="reward-word">禁止投食</span>
-                    </a>
-                </div>
-
             </div>
         </div>
     </div>
