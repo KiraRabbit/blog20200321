@@ -5,13 +5,10 @@ import com.kirarabbit.mybatis.PageContext;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
 /**
  * 用于返回格式化的json信息
  *
- * @author zhaojipu 2015-09-08
+ * @author kira 2015-09-08
  */
 public class ResultWrapper {
 

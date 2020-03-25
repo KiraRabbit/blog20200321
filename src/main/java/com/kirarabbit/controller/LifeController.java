@@ -1,4 +1,4 @@
-package com.kirarabbit.Controller;
+package com.kirarabbit.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping
-public class FirstPageController {
+public class LifeController {
 
     @ResponseBody
     public ModelAndView index(){
         ModelAndView mode = new ModelAndView();
-        mode.setViewName("firstPage");
+        mode.setViewName("life.html");
         return mode;
     }
 }

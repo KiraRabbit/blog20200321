@@ -4,7 +4,7 @@ package com.kirarabbit.mybatis;
 /**
  * 实现描述：分页上下文, 用于分页逻辑的解耦
  *
- * @author zhaojipu 2015-09-08
+ * @author kira 2015-09-08
  */
 public class PageContext {
 

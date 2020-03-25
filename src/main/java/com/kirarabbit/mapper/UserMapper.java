@@ -1,15 +1,14 @@
 package com.kirarabbit.mapper;
 
+import com.kirarabbit.baseMapper.TkMapper;
 import com.kirarabbit.entity.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.SelectKey;
 
 import java.util.List;
 
 @Mapper
-public interface UserMapper {
-    List<User> getAll();
+public interface UserMapper  {
 
-    List<User> getOne(@Param("userName")String userName,@Param("password") String password);
-
+    List<User> getUserById(int id);
 }

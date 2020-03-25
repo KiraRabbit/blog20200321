@@ -17,6 +17,7 @@
     <!-- Editor css... -->
     <link rel="stylesheet" href="editMd/css/style.css" />
     <link rel="stylesheet" href="editMd/css/editormd.css" />
+    <!--editMd/css/editormd.css-->
 
 
 
@@ -41,7 +42,7 @@
                 <div class="am-dropdown-content">
                     <div class="personal-card-show" style="text-align: center">
                         <div class="personal-card-show-img">
-                            <img src="https://kira-blog.oss-cn-hangzhou.aliyuncs.com/logo1.jpg">
+                            <img src="img/logo/logo.png">
                         </div>
                         <div class="personal-card-show-name">
                             <h4 style="font-weight: 500">三日月</h4>
@@ -85,7 +86,7 @@
                                 data-am-dropdown-toggle><span></span> <span class="am-icon-caret-down"></span></button>
                         <ul class="am-dropdown-content">
                             <li><a href="/user.html">个人主页</a></li>
-                            <li><a href="/superadmin.html">网站后台管理</a></li>
+                            <li><a href="/superAdmin.html">网站后台管理</a></li>
                             <li><a href="/user.html" class="news">消息<span
                                     class="newsNum am-badge am-badge-danger"></span></a></li>
                             <li><a class="feedbackClick">反馈</a></li>
@@ -103,7 +104,7 @@
                        style="color: white">登录</a>
                 </div>
                 <div class="am-topbar-right writing am-hide-sm-down">
-                    <a href="/static/editor.html">
+                    <a href="/editor.html">
                         <img src="img/sign/write.png">
                         <span class="write-word">写博客</span>
                     </a>
@@ -122,7 +123,7 @@
 
 <!--页面主体-->
 <div id="main" style="margin-top: 16px">
-    <h3>登录成功</h3>
+
 
     <!-- Editor容器... -->
     <div id="test-editormd">
@@ -132,29 +133,14 @@
 
 
 </div>
-<script type="text/javascript">
-    var testEditor;
-    $(function() {
-        testEditor = editormd("test-editormd", {
-            width   : "98%",
-            height  : 300,
-            syncScrolling : "single",
-            path    : "Editor/lib/", //依赖lib文件夹路径
-            emoji : true,
-            taskList : true,
-            tocm     : true,
-            imageUpload: true,
-            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            imageUploadURL: "imageUpload"		//上传图片控制器Mapping
-        });
-    });
-</script>
+
 
 
 
 </body>
 <script src="js/layui.js" charset="utf-8"></script>
-<script src="../static/js/jquery-1.8.2.min.js"></script>
-<script src="../static/js/editormd/editormd.js"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="./editMd/js/editormd.min.js"></script>
+<script src="js/editor.js"></script>
 
 </html>

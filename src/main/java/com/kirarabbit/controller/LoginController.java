@@ -1,4 +1,4 @@
-package com.kirarabbit.Controller;
+package com.kirarabbit.controller;
 
 import com.kirarabbit.common.ResultWrapper;
 import com.kirarabbit.entity.User;
@@ -31,19 +31,34 @@ public class LoginController {
         return mode;
     }
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @ResponseBody
     public Object getAll() {
         List<User> list = userService.getAll();
         return ResultWrapper.correctReturn(list);
-    }
+    }*/
 
-    @RequestMapping(value = "/in", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/user", method = RequestMethod.POST)
     @ResponseBody
     public Object login(String userName,String password) {
         Map<String, Object> map = new HashMap<>();
         List<User> list  =userService.login(userName,password);
         if (list.size()==1){
+            map.put("code", 200);
+            map.put("msg","登录成功");
+        }else{
+            map.put("code", 400);
+            map.put("msg","登录失败");
+        }
+        return ResultWrapper.correctReturn(list);
+    }*/
+
+    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getUserById(int id) {
+        Map<String, Object> map = new HashMap<>();
+        List<User> list  =userService.getUserById(id);
+        if (list.size()>=1){
             map.put("code", 200);
             map.put("msg","登录成功");
         }else{
