@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/plugs_paging.css">
+    <link rel="stylesheet" href="css/layui.css" media="all">
 
 
 </head>
@@ -32,7 +33,7 @@
                 <div class="am-dropdown-content">
                     <div class="personal-card-show" style="text-align: center">
                         <div class="personal-card-show-img">
-                            <img src="https://kira-blog.oss-cn-hangzhou.aliyuncs.com/logo1.jpg">
+                            <img src="img/kira/logo.jpeg">
                         </div>
                         <div class="personal-card-show-name">
                             <h4 style="font-weight: 500">三日月</h4>
@@ -113,8 +114,20 @@
 
 <!--页面主体-->
 <div id="main" style="margin-top: 16px">
+<!--轮播图-->
+    <div class="layui-carousel" id="photo-group">
+        <div carousel-item>
+            <div>条目1</div>
+            <div>条目2</div>
+            <div>条目3</div>
+            <div>条目4</div>
+            <div>条目5</div>
+        </div>
+    </div>
 
 
 </div>
 </body>
+<script src="js/layui.js" charset="utf-8"></script>
+<script src="js/life.js"></script>
 </html>
