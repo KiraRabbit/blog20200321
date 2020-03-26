@@ -53,7 +53,7 @@ public class LoginController {
         return ResultWrapper.correctReturn(list);
     }*/
 
-    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/getUserById", method = RequestMethod.GET)
     @ResponseBody
     public Object getUserById(int id) {
         Map<String, Object> map = new HashMap<>();
@@ -66,6 +66,21 @@ public class LoginController {
             map.put("msg","登录失败");
         }
         return ResultWrapper.correctReturn(list);
+    }*/
+
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @ResponseBody
+    public Object getUser(User user) {
+        Map<String, Object> map = new HashMap<>();
+        List<User> list  =userService.getUser(user);
+        if (list.size()>=1){
+            map.put("code", 200);
+            map.put("msg","登录成功");
+        }else{
+            map.put("code", 400);
+            map.put("msg","登录失败");
+        }
+        return map;
     }
 
 }

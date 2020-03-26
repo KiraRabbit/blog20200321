@@ -12,7 +12,12 @@ public class UserDao {
     @Autowired
     private UserMapper userMapper;
 
-    public List<User> getUserById(int id) {
-        return userMapper.getUserById(id);
+    public  int insert(User user) {
+        return userMapper.insert(user);
+    }
+
+
+    public List<User> getUser(User user) {
+        return userMapper.getUser(user);
     }
 }

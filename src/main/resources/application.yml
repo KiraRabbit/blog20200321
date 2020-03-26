@@ -10,7 +10,7 @@ spring:
   datasource:
     # 使用阿里的Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/myblog
+    url: jdbc:mysql://127.0.0.1:3306/kiraBlog
     username: root
     password: 123456
     driverClassName: com.mysql.jdbc.Driver
@@ -70,10 +70,9 @@ spring:
     suffix: .html
 #通用Mapper默认引用了jdbc与mybatis启动器，并开启驼峰，可去除重复依赖
 mybatis:
-  #mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/*Mapper*.xml
   type-aliases-package: com.kirarabbit.entity  # 注意：对应实体类的路径
-mapper:
-  mappers: com.kirarabbit.baseMapper.TkMapper #通用基类配置
-  identity: MYSQL
 
 

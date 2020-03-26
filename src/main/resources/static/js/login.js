@@ -14,7 +14,7 @@ $("#login").on("click", function () {
                 if (data.code == 200) {
                     toastr["success"]('登录成功');
                     //跳转后台管理页面
-                    window.location.href = "../manager.html";
+                    window.location.href = "..zoom/index.html";
                 } else if (data.code == 400){
                     toastr["error"]('登录失败');
                 }
@@ -26,7 +26,6 @@ $("#login").on("click", function () {
     }else {
         toastr["error"]('用户名格式错误');
     }
-
 
 
 });

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kirarabbit.mapper.UserMapper">
+
+    <resultMap type="com.kirarabbit.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="trueName" column="true_name" jdbcType="VARCHAR"/>
+        <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.kirarabbit.entity.User">
+        insert into user(
+        <if test="phone != null and phone != ''">
+            phone,
+        </if>
+        <if test="userName != null and userName != ''">
+            user_name ,
+        </if>
+        <if test="password != null and password != ''">
+            password,
+        </if>
+        <if test="trueName != null and trueName != ''">
+            true_name,
+        </if>
+        <if test="birthday != null and birthday != ''">
+            birthday,
+        </if>
+        <if test="email != null and email != ''">
+            email,
+        </if>
+        <if test="createTime != null and createTime != ''">
+            create_time,
+        </if>
+            modify_time
+        )
+        VALUES
+        (
+        <if test="phone != null and phone != ''" >
+            #{phone},
+        </if>
+        <if test="userName != null and userName != ''" >
+            #{userName},
+        </if>
+        <if test="password != null and password != ''" >
+            #{password},
+        </if>
+        <if test="trueName != null and trueName != ''" >
+            #{trueName},
+        </if>
+        <if test="birthday != null and birthday != ''" >
+            #{birthday},
+        </if>
+        <if test="email != null and email != ''" >
+            #{email},
+        </if>
+        <if test="createTime != null and createTime != ''" >
+            #{createTime},
+        </if>
+        NOW()
+        )
+    </insert>
+    <select id="getUser" resultType="com.kirarabbit.entity.User">
+        select * from user
+        where
+        user_name = #{userName}
+        AND
+        password = #{password}
+    </select>
+
+
+</mapper>
