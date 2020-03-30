@@ -28,7 +28,7 @@
 <div>
     <!--头部-->
     <div class="header">
-        <div class="am-topbar" style="margin-bottom: 0">
+        <div class="am-topbar" style="margin-bottom: 0;background-color: white">
             <h1 class="am-topbar-brand">
                 <a href="/" class="blogTitleName"><img src="img/kira/logo.jpeg" class="imgStyle">三日月</a>
             </h1>
@@ -80,9 +80,10 @@
                     <li><a class="top_bar" href="/aboutMe.html" style="cursor: pointer;"><span
                             class="am-icon-user"></span>&nbsp;关于三日月</a></li>
                     <li>
-                            <input type="text" class="form-control" placeholder="..." aria-describedby="basic-addon2" style="margin-top: 4%;">
+                        <input type="text" class="form-control" placeholder="..." aria-describedby="basic-addon2"
+                               style="margin-top: 4%;">
                     </li>
-                    <li><a class="top_bar"  style="cursor: pointer;"><span
+                    <li><a class="top_bar" style="cursor: pointer;"><span
                             class="glyphicon glyphicon-search"></span>&nbsp</a></li>
                 </ul>
 
@@ -131,8 +132,9 @@
 <!--页面主体-->
 <div id="main" style="margin-top: 2%">
     <div style="margin-bottom: 2%;">
-        <input type="text" class="form-control" placeholder="输入文章标题" style="float: left;width: 55%;margin-left: 7.5%;">
-        <button type="button" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="width: 10%;margin-top: 0px;">
+        <input id = "title" type="text" class="form-control" placeholder="输入文章标题" style="float: left;width: 50%;margin-left: 7.5%;">
+        <input id = "title" type="text" class="form-control" placeholder="输入文章分类" style="float: left;width: 10%;margin-left: 7.5%;">
+        <button  id = "save" type="button" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="width: 10%;margin-top: 0px;">
             保存
         </button>
         <button type="button" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="width: 10%;margin-top: 0px;">
@@ -150,9 +152,9 @@
 
 </body>
 <script src="js/layui.js" charset="utf-8"></script>
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="./editMd/js/editormd.min.js"></script>
-<script src="js/bootstrap.min.js.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/editor.js"></script>
 
 </html>

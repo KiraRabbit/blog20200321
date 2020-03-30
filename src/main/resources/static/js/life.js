@@ -1,10 +1,10 @@
-layui.use('carousel', function(){
-    var carousel = layui.carousel;
-    //建造实例
-    carousel.render({
-        elem: '#photo-group'
-        ,width: '100%' //设置容器宽度
-        ,arrow: 'always' //始终显示箭头
-        //,anim: 'updown' //切换动画方式
-    });
+var editormd;
+
+editormd.markdownToHTML("test-editormd", {
+    htmlDecode      : "style,script,iframe",
+    emoji           : true,
+    taskList        : true,
+    tex             : true,  // 默认不解析
+    flowChart       : true,  // 默认不解析
+    sequenceDiagram : true  // 默认不解析
 });

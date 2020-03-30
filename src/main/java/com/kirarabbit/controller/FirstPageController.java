@@ -9,13 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
  * @author kira
  */
 @Controller
-@RequestMapping
+@RequestMapping("/firstPage")
 public class FirstPageController {
-
-    @ResponseBody
-    public ModelAndView index(){
-        ModelAndView mode = new ModelAndView();
-        mode.setViewName("firstPage");
-        return mode;
+    @RequestMapping("")
+    public String firstPage() {
+        return "firstPage";
     }
+
 }

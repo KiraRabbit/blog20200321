@@ -45,20 +45,20 @@
                 <div class="col-lg-6">
                     <div class="form d-flex align-items-center">
                         <div class="content">
-                            <form method="get" class="form-validate mb-4">
+                            <form id="login-form" method="get" class="form-validate mb-4">
                                 <div class="form-group">
-                                    <input id="login-username" type="text" name="loginUsername" required
+                                    <input id="login-username" type="text" name="userName" required
                                            data-msg="请输入用户名" class="input-material">
                                     <label for="login-username" class="label-material">用户名</label>
                                 </div>
                                 <div class="form-group">
-                                    <input id="login-password" type="password" name="loginPassword" required
+                                    <input id="login-password" type="password" name="password" required
                                            data-msg="请输入密码" class="input-material">
                                     <label for="login-password" class="label-material">密码</label>
                                 </div>
-                                <button    onclick="login()" type="submit" class="btn btn-primary">登录</button>
+                                <button  id="signUp"  class="btn btn-primary">登录</button>
                             </form>
-                            <a href="#" class="forgot-pass">忘记了密码?</a><br><small>你还不是新用户? </small><a
+                            <a href="#" class="forgot-pass">忘记了密码?</a><br><small>你还不是新用户? </small><a href="register.html"
                               class="signup">注册</a>
                         </div>
                     </div>

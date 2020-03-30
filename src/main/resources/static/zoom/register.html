@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/componments.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -45,25 +46,41 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form class="text-left form-validate">
+                  <form class="text-left form-validate" id ="register-form">
                     <div class="form-group-material">
-                      <input id="register-username" type="text" name="registerUsername" required data-msg="请输入用户名" class="input-material">
+                      <input id="register-username" type="text" name="userName" required data-msg="请输入用户名" class="input-material">
                       <label for="register-username" class="label-material">用户名</label>
                     </div>
                     <div class="form-group-material">
-                      <input id="register-email" type="email" name="registerEmail" required data-msg="请输入注册邮箱" class="input-material">
+                      <input id="register-phoneNum" type="phoneNum" name="phone" required data-msg="请输入注册手机号" class="input-material">
+                      <label for="register-phoneNum" class="label-material">手机号      </label>
+                    </div>
+                    <div class="form-group-material">
+                      <input id="register-truename" type="text" name="trueName" required data-msg="请输入真实姓名" class="input-material">
+                      <label for="register-truename" class="label-material">姓名</label>
+                    </div>
+                    <div class="form-group-material">
+                      <input id="register-email" type="email" name="email" required data-msg="请输入注册邮箱" class="input-material">
                       <label for="register-email" class="label-material">邮箱地址      </label>
                     </div>
                     <div class="form-group-material">
-                      <input id="register-password" type="password" name="registerPassword" required data-msg="请输入密码" class="input-material">
+                      <input id="register-password" type="password" name="password" required data-msg="请输入密码" class="input-material">
                       <label for="register-password" class="label-material">密码        </label>
+                    </div>
+                    <div id="pwindicator" class="pwindicator pw-very-strong" style="display: none;">
+                      <div class="bar"></div>
+                      <div class="label">很强👌</div>
+                    </div>
+                    <div class="form-group-material">
+                      <input id="repeat-password" type="password" name="repeatPassword" required data-msg="请输入密码" class="input-material">
+                      <label for="repeat-password" class="label-material">重新密码        </label>
                     </div>
                     <div class="form-group terms-conditions text-center">
                       <input id="register-agree" name="registerAgree" type="checkbox" required value="1" data-msg="你需要勾选" class="checkbox-template">
                       <label for="register-agree">我同意该协议</label>
                     </div>
                     <div class="form-group text-center">
-                      <input id="register" type="submit" value="注册" class="btn btn-primary">
+                      <input id="register" type="submit" value="注册" class="btn btn-primary" style="width: 60%">
                     </div>
                   </form><small>准备好拥有一个新账号? </small><a href="login.html" class="signup">登录</a>
                 </div>

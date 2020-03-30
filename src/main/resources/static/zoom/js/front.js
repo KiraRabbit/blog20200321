@@ -5,13 +5,13 @@ $(function () {
     // Tooltips init
     // ------------------------------------------------------ //    
 
-    $('[data-toggle="tooltip"]').tooltip()        
+    $('[data-toggle="tooltip"]').tooltip();
 
     // ------------------------------------------------------- //
     // Universal Form Validation
     // ------------------------------------------------------ //
 
-    $('.form-validate').each(function() {  
+    $('.form-validate').each(function () {
         $(this).validate({
             errorElement: "div",
             errorClass: 'is-invalid',
@@ -23,8 +23,7 @@ $(function () {
                 //console.log(element);
                 if (element.prop("type") === "checkbox") {
                     error.insertAfter(element.siblings("label"));
-                } 
-                else {
+                } else {
                     error.insertAfter(element);
                 }
             }
@@ -38,7 +37,9 @@ $(function () {
     var materialInputs = $('input.input-material');
 
     // activate labels for prefilled values
-    materialInputs.filter(function() { return $(this).val() !== ""; }).siblings('.label-material').addClass('active');
+    materialInputs.filter(function () {
+        return $(this).val() !== "";
+    }).siblings('.label-material').addClass('active');
 
     // move label on focus
     materialInputs.on('focus', function () {
@@ -66,7 +67,7 @@ $(function () {
         adjustFooter();
     });
 
-    $(window).on('resize', function(){
+    $(window).on('resize', function () {
         adjustFooter();
     })
 
@@ -154,36 +155,124 @@ $(function () {
 
 });
 
-
-function login() {
+$("#signUp").on("click", function () {
     var userName = $('#login-username').val();
     var password = $('#login-password').val();
     //正则匹配
-    var namePattern = /^[a-zA-Z0-9_-]{4,16}$/;
-    if (namePattern.test(userName)){
-        $.ajax('/login/user', {
-            dataType: 'json',
-            type: 'POST',
-            data: {"userName":userName,
-                "password":password,
-            },
-            success: function (data) {
-                console.log(data);
-                tests = data;
-                if (data.code == 200) {
-                    toastr["success"]('登录成功');
-                    //跳转后台管理页面
-                    window.location.href = "../manager.html";
-                } else if (data.code == 400){
-                    toastr["error"]('登录失败');
-                }
-            },
-            error: function (_error) {
-                toastr["error"]('登录异常');
+    //var namePattern = /^[a-zA-Z0-9_-]{4,16}$/;
+    //校验用户名，校验要求用户名字符长度6~18个字符，首字符必须为英文字母，其它字符范围为数字或英文字母或下划线
+    var namePattern = /^[a-zA-Z]\w{5,17}$/;
+    //if (namePattern.test(userName))
+    var jsonData = $('#login-form').serialize();
+
+    $.ajax('/login/user', {
+        dataType: 'json',
+        type: 'POST',
+        async: true,
+        data: jsonData,
+        success: function (data) {
+            tests = data;
+            if (data.code == 200) {
+                alert("登录中,请稍后");
+                window.location.href="index.html";
+            } else {
+                alert("登录异常");
             }
-        });
-    }else {
-        toastr["error"]('用户名格式错误');
+        },
+        error: function (data) {
+            alert("登录异常");
+        }
+    });
+    return false;
+});
+
+
+
+
+//用户注册
+
+$("#register").on("click", function () {
+    var userName = $('#register-username').val();
+    var phone = $('#register-phoneNum').val();
+    var trueName = $('#register-truename').val();
+    var email = $('#register-email').val();
+    var password = $('#register-password').val();
+    var repeatassword = $('#repeat-password').val();
+    //正则匹配
+    //var namePattern = /^[a-zA-Z0-9_-]{4,16}$/;
+    //校验用户名，校验要求用户名字符长度6~18个字符，首字符必须为英文字母，其它字符范围为数字或英文字母或下划线
+    var namePattern = /^[a-zA-Z]\w{5,17}$/;
+    if(!(namePattern.test(userName))){
+        alert("用户名字符长度6~18个字符，首字符必须为英文字母，其它字符范围为数字或英文字母或下划线");
+        return false;
+    }
+    //校验手机号
+    var phonePattern = /^1[3456789]\d{9}$/;
+    if(!(phonePattern.test(phone))){
+        alert("手机号码有误，请重填");
+        return false;
+    }
+    //校验真实姓名
+    var trueNamePattern = /^([\u4e00-\u9fa5]{1,20}|[a-zA-Z\.\s]{1,20})$/;
+    if(!(trueNamePattern.test(trueName))){
+        alert("输真名啊");
+        return false;
+    }
+    //校验邮箱
+    var emailPattern = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    if(!(emailPattern.test(email))){
+        alert("邮箱有误,请重填");
+        return false;
+    }
+    //检验密码强弱
+    var easyPasswordPattern = /^[\w_-]{6,16}$/;
+    var safePasswordPattern = /^.*(?=.{6,16})(?=.*\d)(?=.*[A-Z]{2,})(?=.*[a-z]{2,})(?=.*[!@#$%^&*?\(\)]).*$/;
+    if (safePasswordPattern.test(password))
+        $("#pwindicator").show();
+
+    // 检验重复密码
+    if (password!=repeatassword){
+        alert("两次输入的密码不一致");
+        return false;
     }
 
-}
+    var codeName= ["弱","中","强","超强"];
+    function checkStrong(val) {
+                var modes = 0;
+                if (val.length < 6) return 0;
+                if (/\d/.test(val)) modes++; //数字
+                if (/[a-z]/.test(val)) modes++; //小写
+                if (/[A-Z]/.test(val)) modes++; //大写
+                if (/\W/.test(val)) modes++; //特殊字符
+                if (val.length > 12) return 4;
+                return modes;
+            }
+
+
+
+
+    //表单序列化
+    var jsonData = $('#register-form').serialize();
+    if (jsonData.password) {
+        jsonData.password = $.md5(jsonData.password);
+    }
+    delete jsonData["confirmPassword"];
+    $.ajax('/register/saveUser', {
+        dataType: 'json',
+        type: 'POST',
+        data: jsonData,
+        success: function (data) {
+            isSubmit = 0;
+            if (data.code == 200) {
+                window.location.href = "index.html";
+            } else {
+                alert("注册失败");
+            }
+        },
+        error: function (_error) {
+            alert("注册失败");
+        }
+    });
+    return false;
+
+});

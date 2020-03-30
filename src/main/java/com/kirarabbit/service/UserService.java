@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Slf4j
 @Service
 public class UserService {
@@ -15,8 +16,8 @@ public class UserService {
     @Autowired
     private User user;
 
-    public int insert(User user){
-            return userDao.insert(user);
+    public int insert(User user) {
+        return userDao.insert(user);
 
     }
 

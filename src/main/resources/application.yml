@@ -1,5 +1,6 @@
 server:
   port: 8083
+
 spring:
   banner:
     location: banner.txt
@@ -56,11 +57,6 @@ spring:
         # 登录密码
         login-password: 123456
 
-
-  mvc:
-    view:
-      prefix: =classpath:/static/
-      suffix: .html
   thymeleaf:
     cache: false
     check-template-location: true
@@ -69,6 +65,8 @@ spring:
     prefix: classpath:/static/
     suffix: .html
 #通用Mapper默认引用了jdbc与mybatis启动器，并开启驼峰，可去除重复依赖
+
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

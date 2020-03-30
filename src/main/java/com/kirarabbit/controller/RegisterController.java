@@ -1,7 +1,9 @@
 package com.kirarabbit.controller;
 
+import com.kirarabbit.common.ResultWrapper;
 import com.kirarabbit.entity.User;
 import com.kirarabbit.service.UserService;
+import com.kirarabbit.utils.encryption;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,15 +32,19 @@ public class RegisterController {
         return mode;
     }
 
-    @RequestMapping(value = "/newUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     @ResponseBody
     public Object insertNewUser(User user) {
         Map<String, Object> map = new HashMap<>();
-
+        String pwd = encryption.getSHA256(user.getPassword());
+        user.setPassword(pwd);
         int count = userService.insert(user);
+        if (count>0){
+            return ResultWrapper.correctReturn("");
+        }else {
+            return ResultWrapper.errorReturn("注册失败");
+        }
 
-
-        return count;
     }
 
 }
