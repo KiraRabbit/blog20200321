@@ -55,4 +55,12 @@ public class ResultWrapper {
         result.put("total", PageContext.getPage().getTotalRows());
         return normalResult(result);
     }
+    public static HashMap<String, Object> layuiResult(Object ret, int size) {
+        HashMap<String, Object> map = new HashMap();
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("count", size);
+        map.put("data", ret);
+        return map;
+    }
 }

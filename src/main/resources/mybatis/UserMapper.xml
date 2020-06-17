@@ -36,7 +36,7 @@
         <if test="createTime != null and createTime != ''">
             create_time,
         </if>
-            modify_time
+        modify_time
         )
         VALUES
         (

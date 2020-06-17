@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/plugs_paging.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
 
 
 </head>
@@ -114,28 +114,60 @@
 
 <!--页面主体-->
 <div id="main" style="margin-top: 16px">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">区域</label>
+            <select id="select-area" name="area" class="layui-input" style="width: 100px">
+                <option value="">全杭州</option>
+                <option value="西湖">西湖</option>
+                <option value="上城">上城</option>
+                <option value="下城">下城</option>
+                <option value="滨江">滨江</option>
+                <option value="拱墅">拱墅</option>
+                <option value="余杭">余杭</option>
+                <option value="江干">江干</option>
+                <option value="萧山">萧山</option>
+            </select>
+        </div>
 
-    <div class="box-body table-responsive">
-        <table id="dummyEquipment-table" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-                <th>区域</th>
-                <th>房型</th>
-                <th>面积</th>
-                <th>装修</th>
-                <th>楼层</th>
-                <th>总价</th>
-                <th>每平方价格</th>
-                <th>链家地址</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="layui-inline">
+            <label class="layui-form-label">面积</label>
+            <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" id="houseTypeLess" name="houseTypeLess" placeholder="平方米" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid">-</div>
+            <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" id="houseTypeMore" name="houseTypeMore" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">总价</label>
+            <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" id="moneyLess" name="moneyLess"  placeholder="￥    万" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid">-</div>
+            <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" id="moneyMore" name="moneyMore"  placeholder="￥    万" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+
+<!--你可以去定义它的颜色或者大小，如：
+<i class="layui-icon layui-icon-face-smile" style="font-size: 30px; color: #1E9FFF;"></i>  -->
+  <!--      <i id="search-house" class="layui-icon layui-icon-search" style="float: right"></i>-->
+        <button id="search-house" type="button" class="layui-btn" style="float: right;margin-right: 2%;">查询</button>
+
+
     </div>
+
+    <table class="layui-hide" id="test"></table>
 
 
 
 </div>
 </body>
-<script src="js/bootstrap.js"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="layui/layui.js" charset="utf-8"></script>
+<script src="js/tags.js"></script>
 </html>

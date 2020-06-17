@@ -5,39 +5,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/zoom")
+@RequestMapping({"/zoom"})
 public class ZoomController {
 
-
-    @GetMapping("login")
+    @GetMapping({"login"})
     public String login() {
         return "/zoom/login";
     }
 
-    @GetMapping("register")
+    @GetMapping({"register"})
     public String register() {
         return "/zoom/register";
     }
-    @GetMapping("charts")
+
+    @GetMapping({"charts"})
     public String charts() {
         return "/zoom/charts";
     }
-    @GetMapping("forms")
+
+    @GetMapping({"forms"})
     public String forms() {
         return "/zoom/forms";
     }
-    @GetMapping("index")
+
+    @GetMapping({"index"})
     public String index() {
         return "/zoom/index";
     }
-    @GetMapping("tables")
+
+    @GetMapping({"tables"})
     public String tables() {
         return "/zoom/tables";
     }
 
-    @GetMapping("firstPage")
+    @GetMapping({"firstPage"})
     public String firstPage() {
         return "/zoom/firstPage";
     }
-
 }

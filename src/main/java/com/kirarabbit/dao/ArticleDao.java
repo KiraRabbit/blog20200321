@@ -10,7 +10,10 @@ public class ArticleDao {
     @Autowired
     private ArticleMapper articleMapper;
 
+    public ArticleDao() {
+    }
+
     public int insert(Article article) {
-        return articleMapper.insert(article);
+        return this.articleMapper.insert(article);
     }
 }
