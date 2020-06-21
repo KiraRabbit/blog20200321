@@ -19,9 +19,7 @@ public class ArticleService {
     public int insert(Article article) {
         if (article.getCreateTime() == null) {
             article.setCreateTime(new Date());
-            return this.articleDao.insert(article);
-        } else {
-            return this.articleDao.insert(article);
         }
+        return this.articleDao.insert(article);
     }
 }

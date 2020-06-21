@@ -28,10 +28,7 @@ public class LoginController {
     public LoginController() {
     }
 
-    @RequestMapping(
-        value = {"/user"},
-        method = {RequestMethod.POST}
-    )
+    @RequestMapping(value = {"/user"},method = {RequestMethod.POST})
     @ResponseBody
     public Object getUser(User user, Map<String, Object> map, HttpSession httpSession) {
         if (!StringUtils.isEmpty(user.getUserName()) && !StringUtils.isEmpty(user.getPassword())) {

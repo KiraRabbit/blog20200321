@@ -1,5 +1,7 @@
 server:
   port: 8083
+
+
 spring:
   banner:
     location: banner.txt
@@ -10,9 +12,11 @@ spring:
   datasource:
     # 使用阿里的Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/kiraBlog
+    #182.92.233.146:3306
+    url: jdbc:mysql://182.92.233.146:3306/kiraBlog?useUnicode=true&characterEncoding=utf8
     username: root
-    password: 123456
+    #password:Kira123456
+    password: Kira123456
     driverClassName: com.mysql.jdbc.Driver
     druid:
       # 连接池的配置信息
@@ -64,12 +68,20 @@ spring:
     prefix: classpath:/static/
     suffix: .html
 #通用Mapper默认引用了jdbc与mybatis启动器，并开启驼峰，可去除重复依赖
-
+debug:
+  true
 
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+    #控制台mysql输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mybatis/*Mapper*.xml
   type-aliases-package: com.kirarabbit.entity  # 注意：对应实体类的路径
 
+
+#日志mysql输出
+logging:
+  level:
+    com.kirarabbit.mapper.*: debug    #这是你的mapper包路径。
 

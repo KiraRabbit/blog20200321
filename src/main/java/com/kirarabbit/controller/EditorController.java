@@ -2,8 +2,10 @@ package com.kirarabbit.controller;
 
 import com.kirarabbit.entity.Article;
 import com.kirarabbit.service.ArticleService;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +21,7 @@ public class EditorController {
     public EditorController() {
     }
 
-    @RequestMapping(
-        value = {"/insertContent"},
-        method = {RequestMethod.POST}
-    )
+    @RequestMapping(value = {"/insertContent"},method = {RequestMethod.POST})
     @ResponseBody
     public Object insertNewUser(Article article) {
         Map<String, Object> map = new HashMap();

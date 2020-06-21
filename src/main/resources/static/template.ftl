@@ -25,7 +25,7 @@
             <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
                     style="background-color: #CCCCCC;border-color: white;border-radius: 6px"
                     data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
-                    class="am-icon-bars"></span></button>
+                        class="am-icon-bars"></span></button>
 
             <div id="personal-card" class="am-dropdown am-show-md-down" data-am-dropdown style="float: right">
                 <button id="personal-card-btn" class="am-btn am-btn-success am-dropdown-toggle" style="padding: 0">
@@ -56,19 +56,18 @@
 
             <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
                 <ul class="am-nav am-nav-pills am-topbar-nav">
-                    <li><a class="top_bar" href="/firstPage.html" style="cursor: pointer;"><span
-                            class="am-icon-home"></span>&nbsp;首页</a>
+                    <li><a class="top_bar" href="/firstPage.html" style="cursor: pointer;"><span class="am-icon-home"></span>&nbsp;首页</a>
                     </li>
                     <li><a class="top_bar" href="/life.html" style="cursor: pointer;"><span class="am-icon-th"></span>&nbsp;生活</a>
                     </li>
                     <li><a class="top_bar" href="/technology.html" style="cursor: pointer;"><span
-                            class="am-icon-archive"></span>&nbsp;技术</a></li>
+                                    class="am-icon-archive"></span>&nbsp;技术</a></li>
                     <li><a class="top_bar" href="/tags.html" style="cursor: pointer;"><span class="am-icon-tags"></span>&nbsp;标签</a>
                     </li>
                     <li><a class="top_bar" href="/update.html" style="cursor: pointer;"><span
-                            class="am-icon-calendar-plus-o"></span>&nbsp;版本更新</a></li>
+                                    class="am-icon-calendar-plus-o"></span>&nbsp;版本更新</a></li>
                     <li><a class="top_bar" href="/aboutMe.html" style="cursor: pointer;"><span
-                            class="am-icon-user"></span>&nbsp;关于三日月</a></li>
+                                    class="am-icon-user"></span>&nbsp;关于三日月</a></li>
                 </ul>
 
 
@@ -80,7 +79,7 @@
                             <li><a href="/user.html">个人主页</a></li>
                             <li><a href="/superAdmin.html">网站后台管理</a></li>
                             <li><a href="/user.html" class="news">消息<span
-                                    class="newsNum am-badge am-badge-danger"></span></a></li>
+                                            class="newsNum am-badge am-badge-danger"></span></a></li>
                             <li><a class="feedbackClick">反馈</a></li>
                             <hr style="margin: 10px 0 5px 0;">
                             <li><a th:href="@{/logout}">退出登录</a></li>
@@ -114,16 +113,12 @@
 </div>
 
 <!--页面主体-->
-<div id="main" style="margin-top: 553px;">
-    <div id="test-editormd" style="width: 50%;text-align:left; margin:0 auto;">
+<div id="main" style="margin-top: 16px">
 
-    <textarea id="template" style="display:none;">
-
-
-
-    </textarea>
-
+    <div id="test-editormd">
+        　　<textarea style="display:none;"></textarea>
     </div>
+
 </div>
 </body>
 <script src="js/jquery-1.8.2.min.js"></script>
@@ -136,5 +131,6 @@
 <script src="lib/flowchart.min.js"></script>
 <script src="lib/jquery.flowchart.min.js"></script>
 <script src="js/editormd/editormd.js"></script>
-<script src="js/template.js"></script>
+<script src="js/technology.js"></script>
+
 </html>

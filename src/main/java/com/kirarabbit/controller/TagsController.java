@@ -27,10 +27,7 @@ public class TagsController {
     public TagsController() {
     }
 
-    @RequestMapping(
-        value = {"/getHouseInfo"},
-        method = {RequestMethod.GET}
-    )
+    @RequestMapping(value = {"/getHouseInfo"},method = {RequestMethod.GET})
     @ResponseBody
     public Object insertNewUser(TblHouseVO tblHouse, Integer page, Integer limit) {
         PageHelper.startPage(page, limit);

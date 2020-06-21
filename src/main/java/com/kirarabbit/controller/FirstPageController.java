@@ -24,32 +24,4 @@ public class FirstPageController {
     public String firstPage() {
         return "firstPage";
     }
-
-    @SneakyThrows
-    @RequestMapping(value = "/getMid")
-    @ResponseBody
-    public Object getMid(HttpServletRequest request) {
-        HashMap<Object, Object> map = new HashMap<>();
-        logger.error("此次请求的的域名为{}",    request.getServerName());
-        logger.error("此次请求的的port为{}",    request.getServerPort());
-        logger.error("此次请求的的port为{}",    request.getRequestURL());
-        String host = request.getHeader("host");
-
-
-        InetAddress address= InetAddress.getByName(request.getServerName());
-        String hostAddress = address.getHostAddress();
-        String hostName = address.getHostName();
-        String hostAddress1 = InetAddress.getLocalHost().getHostAddress();
-        map.put("域名", request.getServerName());
-        map.put("port", request.getServerPort());
-        map.put("URL", request.getRequestURL());
-        map.put("hostAddress", hostAddress);
-        map.put("hostAddress1", hostAddress1);
-        map.put("host", host);
-        return map;
-    }
-
-
-
-
 }

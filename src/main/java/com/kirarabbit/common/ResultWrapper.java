@@ -12,28 +12,28 @@ import java.util.Map;
  */
 public class ResultWrapper {
 
-    public static HashMap<String, Object> correctReturn(Object ret) {
+    public static Map<String, Object> correctReturn(Object ret) {
         if (PageContext.getPage() != null) {
             return pageResult(ret);
         }
         return normalResult(ret);
     }
 
-    public static HashMap<String, Object> errorReturn(int errcode, String errmsg) {
-        HashMap<String, Object> map = new HashMap<String, Object>();
+    public static Map<String, Object> errorReturn(int errcode, String errmsg) {
+        HashMap<String, Object> map = new HashMap<>();
         map.put("code", errcode);
         map.put("msg", errmsg);
         return map;
     }
 
-    public static HashMap<String, Object> errorReturn(String errmsg) {
-        HashMap<String, Object> map = new HashMap<String, Object>();
+    public static Map<String, Object> errorReturn(String errmsg) {
+        HashMap<String, Object> map = new HashMap<>();
         map.put("code", 400);
         map.put("msg", errmsg);
         return map;
     }
 
-    public static HashMap<String, Object> defaultResult(boolean success) {
+    public static Map<String, Object> defaultResult(boolean success) {
         if (success) {
             return correctReturn("操作成功");
         } else {
@@ -41,22 +41,22 @@ public class ResultWrapper {
         }
     }
 
-    public static HashMap<String, Object> normalResult(Object ret) {
-        HashMap<String, Object> map = new HashMap<String, Object>();
+    public static Map<String, Object> normalResult(Object ret) {
+        HashMap<String, Object> map = new HashMap<>();
         map.put("code", 200);
         map.put("msg", "");
         map.put("result", ret);
         return map;
     }
 
-    private static HashMap<String, Object> pageResult(Object ret) {
-        Map<String, Object> result = new HashMap<String, Object>();
+    private static Map<String, Object> pageResult(Object ret) {
+        Map<String, Object> result = new HashMap<>();
         result.put("items", ret);
         result.put("total", PageContext.getPage().getTotalRows());
         return normalResult(result);
     }
-    public static HashMap<String, Object> layuiResult(Object ret, int size) {
-        HashMap<String, Object> map = new HashMap();
+    public static Map<String, Object> layuiResult(Object ret, int size) {
+        Map<String, Object> map = new HashMap();
         map.put("code", 0);
         map.put("msg", "");
         map.put("count", size);

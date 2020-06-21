@@ -54,5 +54,9 @@ public class IndexController {
     public String tags() {
         return "/tags";
     }
+    @GetMapping("article")
+    public String article() {
+        return "/article";
+    }
 
 }
