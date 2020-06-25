@@ -6,4 +6,7 @@
     <select id="getContent" resultType="com.kirarabbit.entity.Article">
         select * from article where id = #{id};
     </select>
+    <select id="getAll" resultType="com.kirarabbit.entity.Article">
+         select * from article order by id desc
+    </select>
 </mapper>

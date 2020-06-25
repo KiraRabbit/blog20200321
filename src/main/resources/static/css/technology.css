@@ -1,0 +1,86 @@
+.articleTitle {
+    background-color: rgba(0, 0, 0, 0);
+    color: #161111;
+    font-family: "Open Sans", "Microsoft Jhenghei", "Microsoft Yahei", sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transition-delay: 0s;
+    transition-duration: .3s;
+    transition-property: color;
+    transition-timing-function: ease;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 35px;
+    float: right;
+    width: 100%;
+    clear: both;
+}
+#read{
+    color: #3194ac;
+    background-color: rgba(0,0,0,0);
+    font-family: "Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transition-delay: 0s;
+    transition-duration: .3s;
+    transition-property: color;
+    transition-timing-function: ease;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 20px;
+    width: 100%;
+    clear: both;
+}
+
+
+.articleContent {
+    background-color: rgba(0,0,0,0);
+    color: #2f2626;
+    font-family: "Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transition-delay: 0s;
+    transition-duration: .3s;
+    transition-property: color;
+    transition-timing-function: ease;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 23px;
+    float: right;
+    width: 100%;
+    clear: both;
+}
+.aictleFooter{
+    background-color: rgba(0,0,0,0);
+    color: #2f2626;
+    font-family: "Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transition-delay: 0s;
+    transition-duration: .3s;
+    transition-property: color;
+    transition-timing-function: ease;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 15px;
+    width: 100%;
+    clear: both;
+}
+
+
+.acrtcle-list{
+    background-color: rgba(0,0,0,0);
+    color: #2f2626;
+    font-family: "Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    transition-delay: 0s;
+    transition-duration: .3s;
+    transition-property: color;
+    transition-timing-function: ease;
+    word-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 45px;
+    width: 100%;
+    clear: both;
+}
