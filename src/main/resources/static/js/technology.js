@@ -84,4 +84,3 @@ function dateFormat(date) {
     return clock;
 }
 
-
